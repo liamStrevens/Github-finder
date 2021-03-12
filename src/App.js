@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
 import Navbar from './component/layout/Navbar';
 import Home from './component/pages/Home';
+import NotFound from './component/pages/NotFound';
 import User from './component/users/User';
 import Alert from './component/layout/Alert';
 import About from './component/pages/About';
@@ -23,6 +23,7 @@ const App = () => {
                 <Route exact path='/' component={Home} />
                 <Route exact path='/about' component={About} />
                 <Route exact path='/user/:login' component={User} />
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>

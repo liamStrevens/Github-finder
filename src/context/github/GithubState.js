@@ -4,7 +4,6 @@ import GithubContext from './githubContext';
 import GithubReducer from './githubReducer';
 import {
   SEARCH_USERS,
-  SET_ALERT,
   CLEAR_USERS,
   GET_USER,
   GET_REPO,
@@ -45,7 +44,7 @@ const GithubState = (props) => {
   const getUser = async (username) => {
     setLoading();
     const res = await axios.get(
-      `https:/api.github.com/users/${username}?client_id=${gitHubClientId}&client_id=${gitHubClientSecret}`
+      `https://api.github.com/users/${username}?client_id=${gitHubClientId}&client_id=${gitHubClientSecret}`
     );
     dispatch({ type: GET_USER, payload: res.data });
   };
@@ -53,7 +52,7 @@ const GithubState = (props) => {
   const getUserRepos = async (username) => {
     setLoading();
     const res = await axios.get(
-      `https:/api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${gitHubClientId}&client_id=${gitHubClientSecret}`
+      `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${gitHubClientId}&client_id=${gitHubClientSecret}`
     );
     dispatch({ type: GET_REPO, payload: res.data });
   };
